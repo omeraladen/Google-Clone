@@ -1,5 +1,4 @@
 .home{
-    
     display: flex;
     flex-direction: column;
     height: 100vh;
@@ -36,9 +35,17 @@
 }
 
 
+.home__body{
+    flex: 1;
+    display: flex; /* To Center the img */
+    margin-top: 10%;
+    flex-direction: column; /* To Center the img */
+}
 
-
-
+.home__body > img{
+    object-fit: contain;
+    height: 100px;
+}
 
 
 
