@@ -8,7 +8,7 @@ import { useNavigate } from 'react-router-dom';
 
 function Search () {
     const [input , setInput] = useState(""); 
-    const navigate = useNavigate();
+    const navigate = useNavigate(); // replaced with useHistory();
 
     const search = (e) => { 
         e.preventDefault();  //prevent a browser reload/refresh
