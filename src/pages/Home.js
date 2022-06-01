@@ -4,8 +4,7 @@ import './Home.css';
 import {link} from 'react-router-dom';
 import AppsIcon from '@mui/icons-material/Apps';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
-import Search from './Search/Search';
-
+import Search from '../component/Search';
 function Home () {
    return(
     <div className='home'>

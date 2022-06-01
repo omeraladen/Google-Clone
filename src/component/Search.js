@@ -4,17 +4,25 @@ import MicIcon from '@mui/icons-material/Mic';
 import SearchIcon from '@mui/icons-material/Search';
 import Button from '@mui/material/Button';
 import { useNavigate } from 'react-router-dom';
+import { useStateValue } from '../StateProvider/StateProvider';
+import { actionTypes } from '../StateProvider/reducer';
 
 
-function Search () {
+function Search ({hideButton = false}) {
+    const [{}, dispatch] = useStateValue();
     const [input , setInput] = useState(""); 
     const navigate = useNavigate(); // replaced with useHistory();
 
     const search = (e) => { 
         e.preventDefault();  //prevent a browser reload/refresh
 
+        
+        dispatch({
+            type: actionTypes.SET_SEARCH_TEARM,
+            term : input
+        })
+        
         navigate('/search');
-
     }
 
     return(
