@@ -1,9 +1,10 @@
 import './App.css';
 import Home from './pages/Home'
+import SearchPage from './pages/SearchPage';
 import {
-  BrowserRouter,
-  Routes,
-  Route,
+  BrowserRouter as Router , 
+    Routes, 
+    Route, 
 } from "react-router-dom";
 
 
@@ -11,15 +12,15 @@ import {
 
 function App() {
   return (
-    <div className="App">
-     <BrowserRouter>
-        <Routes>
+    <div className="app">
+            <Router>
+                   <Routes>
 
-          <Route path="/" element={<Home />} />
-          <Route path="/search" element={<h1>Search Page</h1>} />
-        
-        </Routes>
-  </BrowserRouter>
+                     <Route path="/search" element={<SearchPage/>}/>
+                     <Route path="/" element={<Home/>}/>
+
+                   </Routes>
+            </Router>
     </div>
   );
 }
