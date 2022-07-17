@@ -1,10 +1,12 @@
 import React, {useState} from 'react';
 import './Search.css';
+
 import MicIcon from '@mui/icons-material/Mic';
 import SearchIcon from '@mui/icons-material/Search';
 import Button from '@mui/material/Button';
-import { useNavigate } from 'react-router-dom';
-import { useStateValue } from '../StateProvider/StateProvider';
+
+import { useNavigate } from 'react-router-dom'; // route V6
+import { useStateValue } from '../StateProvider/StateProvider'; // it git the value from initState
 import { actionTypes } from '../StateProvider/reducer';
 
 
@@ -16,11 +18,11 @@ function Search ({hideButtons = false}) {
     const search = (e) => { 
         e.preventDefault();  //prevent a browser reload/refresh
 
-        console.log("you hit search button>>",input)
         dispatch({
             type: actionTypes.SET_SEARCH_TERM,
             term : input
         })
+        console.log("you hit search button>>",input)
         
         navigate('/search');
     };
@@ -33,6 +35,7 @@ function Search ({hideButtons = false}) {
                 <input value={input} onChange={e => setInput(e.target.value)}/>
                 <MicIcon/>
             </div>
+
 
             {/* if we add hideButtons in <Search/> component in shows off 
                 to use it in navbar after the user search and disable the buttons
