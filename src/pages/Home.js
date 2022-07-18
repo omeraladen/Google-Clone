@@ -31,7 +31,7 @@ function Home () {
         <div className='home__body'>
             <img src='https://pngimg.com/uploads/google/google_PNG19631.png' />
             <div className='body__inputContainer'>
-                <Search hideButtons />
+                <Search  />
             </div>
         </div>
     </div>
